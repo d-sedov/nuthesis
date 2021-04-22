@@ -1,0 +1,95 @@
+\documentclass{nudissertation}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{appendix}
+
+\author{Willie Wildcat}
+\title{Willie Wildcat Thesis Title}
+\degree{DOCTOR OF PHILOSOPHY} 
+\field{Everything}
+\graduationyear{2021}
+\graduationmonth{May}
+\campus{EVANSTON, ILLINOIS}
+
+\begin{document}
+
+\maketitle
+
+% Double spacing
+\doublespacing
+
+% Copyright page
+\makecopyright
+
+% Abstract page
+\abstract{\lipsum[1]}
+
+% Acknowledgements page
+\acknowledgements{\lipsum[1-2]}
+
+% Preface
+\preface{\lipsum[1-2]}
+
+% TABLE of Contents
+% Curly brackets and tocdepth reset to display list of figures 
+% and list of tables properly after suppressing the extensive 
+% display of appendix subsections in TOC
+{\tableofcontents}
+\setcounter{tocdepth}{2}
+
+% List of tables
+\listoftables
+
+% List of figures
+\listoffigures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% CHAPTERS GO HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{chapters/chapter1}
+
+\include{chapters/chapter2}
+
+\include{chapters/chapter3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\singlespacing
+\bibliography{references}{}
+\bibliographystyle{chicago}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\appendix
+% FOR CORRECT TABLE OF CONTENTS PRESENTATION
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendix}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+
+% \input instead of \include to due to conflict between
+% \include and \addtocontents, see
+% https://latex.org/forum/viewtopic.php?t=21495
+\input{appendix/appendix1}
+\input{appendix/appendix2}
+\input{appendix/appendix3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+\end{document}
