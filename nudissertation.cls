@@ -7,7 +7,7 @@
 \LoadClass[12pt, letterpaper, intlimits, oneside]{book}
 
 % Set 1-inch margins
-\RequirePackage[margin=1in,includefoot,includehead,headheight=15pt]{geometry}
+\RequirePackage[margin=1in,includehead,headheight=15pt]{geometry}
 
 % Header/footer settings
 \RequirePackage{fancyhdr}
@@ -19,6 +19,17 @@
 \fancyfoot[L,C,R]{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
+% Reset header/footer in plain pages (e.g. first chapter pages)
+\fancypagestyle{plain}{%
+\fancyhead{}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
 
 \RequirePackage{setspace} % Spacing 
 \RequirePackage{titlesec} % Title formatting/spacing
@@ -99,6 +110,8 @@ By\par
 
 % Date
 {\@date}
+% Additional vspace needed since includefoot option from geometry package is omitted
+\vspace*{\footskip}
 
 \end{center}
 \end{titlepage}
