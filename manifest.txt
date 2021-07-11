@@ -1,0 +1,14 @@
+main.tex
+nudissertation.cls
+references.bib
+README.md
+appendix/appendix1.tex
+appendix/appendix2.tex
+appendix/appendix3.tex
+chapters/chapter1.tex
+chapters/chapter2.tex
+chapters/chapter3.tex
+figures/chapter2/pic.tex
+plots/chapter2/pic.jpg
+tables/chapter1/appendix1table.tex
+tables/chapter1/chapter1table.tex
